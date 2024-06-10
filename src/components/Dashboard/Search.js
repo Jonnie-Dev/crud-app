@@ -7,3 +7,5 @@ const Search = (students) => {
     </div>
   );
 };
+
+export default Search;
