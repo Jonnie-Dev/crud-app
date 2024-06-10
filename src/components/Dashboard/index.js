@@ -59,6 +59,7 @@ const Dashboard = () => {
       {!isAdding && !isEditing && (
         <>
           <Header setIsAdding={setIsAdding} />
+          <Search />
           <Card
             students={students}
             handleEdit={handleEdit}
@@ -81,7 +82,6 @@ const Dashboard = () => {
           setIsEditing={setIsEditing}
         />
       )}
-      <Search />
     </div>
   );
 };
