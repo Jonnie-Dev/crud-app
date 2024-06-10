@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
+import Search from "./Search";
 
 import Header from "./Header";
 import Card from "./Card";
@@ -80,6 +81,7 @@ const Dashboard = () => {
           setIsEditing={setIsEditing}
         />
       )}
+      <Search />
     </div>
   );
 };
