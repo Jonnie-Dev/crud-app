@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-const Edit = ({ students, selectedStudent, setStudent, setIsEditing }) => {
-  const id = selectedStudent.id;
+const Edit = ({ students, selectedStudents, setStudent, setIsEditing }) => {
+  const id = selectedStudents.id;
 
-  const [firstName, setFirstName] = useState(selectedStudent.firstName);
-  const [lastName, setLastName] = useState(selectedStudent.lastName);
-  const [matricNo, setMatricNo] = useState(selectedStudent.matricNo);
-  const [department, setDepartment] = useState(selectedStudent.department);
+  const [firstName, setFirstName] = useState(selectedStudents.firstName);
+  const [lastName, setLastName] = useState(selectedStudents.lastName);
+  const [matricNo, setMatricNo] = useState(selectedStudents.matricNo);
+  const [department, setDepartment] = useState(selectedStudents.department);
 
   const handleUpdate = (e) => {
     e.preventDefault();
