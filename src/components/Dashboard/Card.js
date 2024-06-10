@@ -6,19 +6,19 @@ const Table = ({ students, handleEdit, handleDelete }) => {
   });
 
   return (
-    <>
+    <div className="students-container">
       {students.map((student) => (
-        <div key={student.id}>
+        <div key={student.id} className="student-card">
           <h2>
             {student.firstName} {student.lastName}
           </h2>
           <p>{student.department}</p>
           <p>Matric Number: {student.matricNo}</p>
-          <button onClick={() => handleEdit()}>Edit</button>
+          <button onClick={() => handleEdit(student.id)}>Edit</button>
           <button onClick={() => handleDelete()}>Delete</button>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

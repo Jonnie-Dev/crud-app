@@ -15,12 +15,12 @@ const Dashboard = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("employees_data"));
+    const data = JSON.parse(localStorage.getItem("students_data"));
     if (data !== null && Object.keys(data).length !== 0) setStudents(data);
   }, []);
 
   const handleEdit = (id) => {
-    const [student] = students.filter((student) => student.id === id);
+    const [student] = students.filter((el) => el.id === id);
 
     setSelectedStudent(student);
     setIsEditing(true);
@@ -36,7 +36,7 @@ const Dashboard = () => {
       cancelButtonText: "No, cancel!",
     }).then((result) => {
       if (result.value) {
-        const [student] = students.filter((student) => student.id === id);
+        const [student] = students.filter((el) => el.id === id);
 
         Swal.fire({
           icon: "success",
@@ -46,7 +46,7 @@ const Dashboard = () => {
           timer: 1500,
         });
 
-        const studentsCopy = students.filter((student) => student.id !== id);
+        const studentsCopy = students.filter((el) => el.id !== id);
         localStorage.setItem("students_data", JSON.stringify(studentsCopy));
         setStudents(studentsCopy);
       }

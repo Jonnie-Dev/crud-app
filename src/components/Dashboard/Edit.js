@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-const Edit = ({ students, selectedStudents, setStudent, setIsEditing }) => {
-  const id = selectedStudents.id;
+const Edit = ({ students, selectedStudent, setStudents, setIsEditing }) => {
+  const id = selectedStudent.id;
 
-  const [firstName, setFirstName] = useState(selectedStudents.firstName);
-  const [lastName, setLastName] = useState(selectedStudents.lastName);
-  const [matricNo, setMatricNo] = useState(selectedStudents.matricNo);
-  const [department, setDepartment] = useState(selectedStudents.department);
+  const [firstName, setFirstName] = useState(selectedStudent.firstName);
+  const [lastName, setLastName] = useState(selectedStudent.lastName);
+  const [matricNo, setMatricNo] = useState(selectedStudent.matricNo);
+  const [department, setDepartment] = useState(selectedStudent.department);
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -37,7 +37,7 @@ const Edit = ({ students, selectedStudents, setStudent, setIsEditing }) => {
     }
 
     localStorage.setItem("students_data", JSON.stringify(students));
-    setStudent(students);
+    setStudents(students);
     setIsEditing(false);
 
     Swal.fire({

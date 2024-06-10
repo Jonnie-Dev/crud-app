@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-const Add = ({ students, selectedStudents, setStudents, setIsAdding }) => {
-  const [firstName, setFirstName] = useState(selectedStudents.firstName);
-  const [lastName, setLastName] = useState(selectedStudents.lastName);
-  const [matricNo, setMatricNo] = useState(selectedStudents.matricNo);
-  const [department, setDepartment] = useState(selectedStudents.department);
+const Add = ({ students, setStudents, setIsAdding }) => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [matricNo, setMatricNo] = useState("");
+  const [department, setDepartment] = useState("");
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -20,7 +20,7 @@ const Add = ({ students, selectedStudents, setStudents, setIsAdding }) => {
     }
 
     const id = students.length + 1;
-    const newEmployee = {
+    const newStudent = {
       id,
       firstName,
       lastName,
@@ -28,8 +28,8 @@ const Add = ({ students, selectedStudents, setStudents, setIsAdding }) => {
       department,
     };
 
-    students.push(newEmployee);
-    localStorage.setItem("employees_data", JSON.stringify(students));
+    students.push(newStudent);
+    localStorage.setItem("students_data", JSON.stringify(students));
     setStudents(students);
     setIsAdding(false);
 
@@ -62,7 +62,7 @@ const Add = ({ students, selectedStudents, setStudents, setIsAdding }) => {
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
         />
-        <label htmlFor="matricNumber">Email</label>
+        <label htmlFor="matricNumber">Matric Number</label>
         <input
           id="matricNumber"
           type="text"
