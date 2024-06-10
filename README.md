@@ -16,10 +16,10 @@ This project is a submission for the Web3Bridge Cohort VIII Pre-Qualification Ex
 
 1. Clone the repository:
 
-   `git clone https://github.com/yourusername/web3bridge-cohort8-exercise.git`
+   `git clone https://github.com/Jonnie-Dev/crud-app.git`
 
 2. Navigate to the project directory:
-   `cd web3bridge-cohort8-exercise`
+   `cd crud-app`
 
 3. Install the dependencies:
 
